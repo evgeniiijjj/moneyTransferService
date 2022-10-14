@@ -1,0 +1,21 @@
+
+окт. 14, 2022 1:03:50 PM com.example.backend.repo.CardRepositoryImpl <init>
+INFO: Репозиторий с картами инициализирован
+окт. 14, 2022 1:03:50 PM com.example.backend.controller.TransferController <init>
+INFO: Сервис перевода денег запущен
+окт. 14, 2022 1:04:26 PM com.example.backend.util.SenderCardCvvValidator isValid
+INFO: CVV карты корректен: "111"
+окт. 14, 2022 1:04:26 PM com.example.backend.util.TransferAmountValidator isValid
+INFO: На карте достаточно средств для перевода
+окт. 14, 2022 1:04:26 PM com.example.backend.util.CardNumberValidator isValid
+INFO: Номер карты "2222222222222222" корректен
+окт. 14, 2022 1:04:26 PM com.example.backend.util.SenderCardValidTillValidator isValid
+INFO: Срок действия карты действителен: "111"
+окт. 14, 2022 1:04:26 PM com.example.backend.util.CardNumberValidator isValid
+INFO: Номер карты "1111111111111111" корректен
+окт. 14, 2022 1:04:26 PM com.example.backend.controller.TransferController transfer
+INFO: Инициализован новый запрос на перевод: {"cardFromNumber":"1111111111111111","cardToNumber":"2222222222222222","cardFromCVV":"111","cardFromValidTill":"01/31","amount":{"currency":"RUR","value":23456000}}
+окт. 14, 2022 1:04:26 PM com.example.backend.repo.CardRepositoryImpl addOperation
+INFO: Добавлена новая операция: {"operationId":1,"cardFrom":{"cardNumber":"1111111111111111","cardFromValidTill":"01/31","cvv":"111","accounts":{"RUR":{"currency":"RUR","number":"73206657752722033355","amount":34026610}}},"cardTo":{"cardNumber":"2222222222222222","cardFromValidTill":"02/32","cvv":"222","accounts":{"RUR":{"currency":"RUR","number":"64312083422604284128","amount":109624759}}},"currency":"RUR","amount":23456000,"verificationCode":0,"confirmed":false}
+окт. 14, 2022 1:04:26 PM com.example.backend.service.TransferServiceImpl transfer
+INFO: Операция {"operationId":"1"} принята, отправлен код подтверждение операции
