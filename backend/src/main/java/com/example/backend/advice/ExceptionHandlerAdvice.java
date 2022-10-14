@@ -14,17 +14,17 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ExceptionHandlerAdvice {
 
     @ExceptionHandler(RejectedOperationException.class)
-    public ResponseEntity<String> constraintValidationExceptionHandlerBadRequest(Exception e) {
+    public ResponseEntity<String> rejectedOperationExceptionHandler(Exception e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(InternalServerErrorExceptionId1.class)
-    public ResponseEntity<String> constraintValidationExceptionHandlerInternalServerErrorExceptionId1(Exception e) {
+    public ResponseEntity<String> internalServerErrorExceptionId1Handler(Exception e) {
         return new ResponseEntity<>(new ResponseFailed(e.getMessage(), 1).toString(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @ExceptionHandler(InternalServerErrorExceptionId2.class)
-    public ResponseEntity<String> constraintValidationExceptionHandlerInternalServerErrorExceptionId2(Exception e) {
+    public ResponseEntity<String> internalServerErrorExceptionId2Handler(Exception e) {
         return new ResponseEntity<>(new ResponseFailed(e.getMessage(), 2).toString(), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
