@@ -51,7 +51,7 @@ public class TransferServiceImpl implements TransferService {
         String operationId = confirmTransfer.getOperationId();
         try {
             if (repository.getOperation(operationId)
-                    .confirm(confirmTransfer.getVerificationCode())) {
+                    .confirm(confirmTransfer.getCode())) {
                 ResponseSuccess responseSuccess = new ResponseSuccess(operationId);
                 LOGGER.info(LoggerMessages.SUCCESS_CONFIRM_TRANSFER.getMessage(responseSuccess));
                 return responseSuccess;
