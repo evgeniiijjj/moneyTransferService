@@ -3,11 +3,9 @@ package com.example.backend.dto;
 import com.example.backend.util.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @TransferAmount(message = "INSUFFICIENT_SENDER_CARD_FUNDS")
 @SenderCardCVV(message = "INVALID_SENDER_CARD_CVV")
@@ -20,4 +18,8 @@ public class Transfer {
     private String cardFromCVV;
     private String cardFromValidTill;
     private Amount amount;
+    
+    public Transfer() {
+        LOGGER.info(LoggerMessages.TRANSFER.getMessage(transfer));
+    }
 }
