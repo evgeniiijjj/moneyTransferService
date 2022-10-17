@@ -4,6 +4,7 @@ import com.example.backend.util.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
+import static com.example.backend.BackendApplication.LOGGER;
 
 @AllArgsConstructor
 @Getter
