@@ -27,7 +27,6 @@ public class TransferController {
 
     @PostMapping("/transfer")
     public Object transfer(@RequestBody @Valid Transfer transfer, BindingResult bindingResult) {
-        LOGGER.info(LoggerMessages.TRANSFER.getMessage(transfer));
         return service.transfer(transfer, bindingResult);
     }
 
